@@ -71,20 +71,20 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir)\OpenGL;$(SolutionDir)\OpenGL\GLM;$(SolutionDir)\OpenGL\GLEW\include\GL;$(SolutionDir)\OpenGL\GLFW\include\GLFW;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\OpenGL\GLFW;$(SolutionDir)\OpenGL\GLEW;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\OpenGL;$(SolutionDir)\OpenGL\GLM;$(SolutionDir)\OpenGL\GLEW\include\GL;$(SolutionDir)\OpenGL\GLFW\include\GLFW;$(SolutionDir)\OpenGL\ASSIMP\include\assimp;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\OpenGL\GLFW;$(SolutionDir)\OpenGL\GLEW;$(SolutionDir)\OpenGL\ASSIMP\lib\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(SolutionDir)\OpenGL;$(SolutionDir)\OpenGL\GLM;$(SolutionDir)\OpenGL\GLEW\include\GL;$(SolutionDir)\OpenGL\GLFW\include\GLFW;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\OpenGL\GLFW;$(SolutionDir)\OpenGL\GLEW;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\OpenGL;$(SolutionDir)\OpenGL\GLM;$(SolutionDir)\OpenGL\GLEW\include\GL;$(SolutionDir)\OpenGL\GLFW\include\GLFW;$(SolutionDir)\OpenGL\ASSIMP\include\assimp;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\OpenGL\GLFW;$(SolutionDir)\OpenGL\GLEW;$(SolutionDir)\OpenGL\ASSIMP\lib\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)\OpenGL;$(SolutionDir)\OpenGL\GLM;$(SolutionDir)\OpenGL\GLEW\include\GL;$(SolutionDir)\OpenGL\GLFW\include\GLFW;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\OpenGL\GLFW;$(SolutionDir)\OpenGL\GLEW;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\OpenGL;$(SolutionDir)\OpenGL\GLM;$(SolutionDir)\OpenGL\GLEW\include\GL;$(SolutionDir)\OpenGL\GLFW\include\GLFW;$(SolutionDir)\OpenGL\ASSIMP\include\assimp;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\OpenGL\GLFW;$(SolutionDir)\OpenGL\GLEW;$(SolutionDir)\OpenGL\ASSIMP\lib\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(SolutionDir)\OpenGL;$(SolutionDir)\OpenGL\GLM;$(SolutionDir)\OpenGL\GLEW\include\GL;$(SolutionDir)\OpenGL\GLFW\include\GLFW;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\OpenGL\GLFW;$(SolutionDir)\OpenGL\GLEW;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\OpenGL;$(SolutionDir)\OpenGL\GLM;$(SolutionDir)\OpenGL\GLEW\include\GL;$(SolutionDir)\OpenGL\GLFW\include\GLFW;$(SolutionDir)\OpenGL\ASSIMP\include\assimp;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\OpenGL\GLFW;$(SolutionDir)\OpenGL\GLEW;$(SolutionDir)\OpenGL\ASSIMP\lib\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -92,13 +92,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\glfw\glfw-3.3.8.bin.WIN64\include;D:\glew\glew-2.1.0\include;D:\glm-master;$(SolutionDir)\OpenGL\GLM\include;$(SolutionDir)\OpenGL\GLFW;$(SolutionDir)\OpenGL\GLEW;$(SolutionDir)\OpenGL\GLEW\include\GL;$(SolutionDir)\OpenGL\GLFW\include\GLFW;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\glfw\glfw-3.3.8.bin.WIN64\include;D:\glew\glew-2.1.0\include;D:\glm-master;$(SolutionDir)\OpenGL\GLM\include;$(SolutionDir)\OpenGL\GLFW;$(SolutionDir)\OpenGL\GLEW;$(SolutionDir)\OpenGL\GLEW\include\GL;$(SolutionDir)\OpenGL\GLFW\include\GLFW;$(SolutionDir)\OpenGL\ASSIMP\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\glfw\glfw-3.3.8.bin.WIN64\lib-vc2022;D:\glew\glew-2.1.0\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;glew32s.lib;user32.lib;gdi32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\glfw\glfw-3.3.8.bin.WIN64\lib-vc2022;D:\glew\glew-2.1.0\lib\Release\x64;$(SolutionDir)\OpenGL\ASSIMP\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;glew32s.lib;user32.lib;gdi32.lib;shell32.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -109,15 +109,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\glfw\glfw-3.3.8.bin.WIN64\include;D:\glew\glew-2.1.0\include;D:\glm-master;$(SolutionDir)\OpenGL\GLM\include;$(SolutionDir)\OpenGL\GLFW;$(SolutionDir)\OpenGL\GLEW;$(SolutionDir)\OpenGL\GLEW\include\GL;$(SolutionDir)\OpenGL\GLFW\include\GLFW;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\glfw\glfw-3.3.8.bin.WIN64\include;D:\glew\glew-2.1.0\include;D:\glm-master;$(SolutionDir)\OpenGL\GLM\include;$(SolutionDir)\OpenGL\GLFW;$(SolutionDir)\OpenGL\GLEW;$(SolutionDir)\OpenGL\GLEW\include\GL;$(SolutionDir)\OpenGL\GLFW\include\GLFW;$(SolutionDir)\OpenGL\ASSIMP\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\glfw\glfw-3.3.8.bin.WIN64\lib-vc2022;D:\glew\glew-2.1.0\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;glew32s.lib;user32.lib;gdi32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\glfw\glfw-3.3.8.bin.WIN64\lib-vc2022;D:\glew\glew-2.1.0\lib\Release\x64;$(SolutionDir)\OpenGL\ASSIMP\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;glew32s.lib;user32.lib;gdi32.lib;shell32.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -126,13 +126,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\glfw\glfw-3.3.8.bin.WIN64\include;D:\glew\glew-2.1.0\include;D:\glm-master;$(SolutionDir)\OpenGL\GLM\include;$(SolutionDir)\OpenGL\GLFW;$(SolutionDir)\OpenGL\GLEW;$(SolutionDir)\OpenGL\GLEW\include\GL;$(SolutionDir)\OpenGL\GLFW\include\GLFW;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\glfw\glfw-3.3.8.bin.WIN64\include;D:\glew\glew-2.1.0\include;D:\glm-master;$(SolutionDir)\OpenGL\GLM\include;$(SolutionDir)\OpenGL\GLFW;$(SolutionDir)\OpenGL\GLEW;$(SolutionDir)\OpenGL\GLEW\include\GL;$(SolutionDir)\OpenGL\GLFW\include\GLFW;$(SolutionDir)\OpenGL\ASSIMP\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\glfw\glfw-3.3.8.bin.WIN64\lib-vc2022;D:\glew\glew-2.1.0\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;glew32s.lib;user32.lib;gdi32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\glfw\glfw-3.3.8.bin.WIN64\lib-vc2022;D:\glew\glew-2.1.0\lib\Release\x64;$(SolutionDir)\OpenGL\ASSIMP\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;glew32s.lib;user32.lib;gdi32.lib;shell32.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -143,21 +143,25 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\glfw\glfw-3.3.8.bin.WIN64\include;D:\glew\glew-2.1.0\include;D:\glm-master;$(SolutionDir)\OpenGL\GLM\include;$(SolutionDir)\OpenGL\GLFW;$(SolutionDir)\OpenGL\GLEW;$(SolutionDir)\OpenGL\GLEW\include\GL;$(SolutionDir)\OpenGL\GLFW\include\GLFW;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\glfw\glfw-3.3.8.bin.WIN64\include;D:\glew\glew-2.1.0\include;D:\glm-master;$(SolutionDir)\OpenGL\GLM\include;$(SolutionDir)\OpenGL\GLFW;$(SolutionDir)\OpenGL\GLEW;$(SolutionDir)\OpenGL\GLEW\include\GL;$(SolutionDir)\OpenGL\GLFW\include\GLFW;$(SolutionDir)\OpenGL\ASSIMP\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\glfw\glfw-3.3.8.bin.WIN64\lib-vc2022;D:\glew\glew-2.1.0\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;glew32s.lib;user32.lib;gdi32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\glfw\glfw-3.3.8.bin.WIN64\lib-vc2022;D:\glew\glew-2.1.0\lib\Release\x64;$(SolutionDir)\OpenGL\ASSIMP\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;glew32s.lib;user32.lib;gdi32.lib;shell32.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="DirectionalLight.cpp" />
+    <ClCompile Include="Light.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Material.cpp" />
     <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="PointLight.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -167,7 +171,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="CommonValues.h" />
+    <ClInclude Include="DirectionalLight.h" />
+    <ClInclude Include="Light.h" />
+    <ClInclude Include="Material.h" />
     <ClInclude Include="Mesh.h" />
+    <ClInclude Include="PointLight.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="Texture.h" />

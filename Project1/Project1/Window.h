@@ -1,7 +1,10 @@
 #pragma once
-#include <stdio.h>
-#include <GL/glew.h>
-#include <GLFW/include/GLFW/glfw3.h>
+
+#include "stdio.h"
+
+#include <GL\glew.h>
+#include <GLFW\glfw3.h>
+
 class Window
 {
 public:
@@ -11,35 +14,34 @@ public:
 
 	int Initialise();
 
-	GLfloat getBufferWidth() { return bufferWidth; }
-	GLfloat getBufferHeight() { return bufferHeight; }
+	GLint getBufferWidth() { return bufferWidth; }
+	GLint getBufferHeight() { return bufferHeight; }
 
-	bool* getKeys() { return keys; }
+	bool getShouldClose() { return glfwWindowShouldClose(mainWindow); }
+
+	bool* getsKeys() { return keys; }
 	GLfloat getXChange();
 	GLfloat getYChange();
 
-	bool getShouldClose() { return glfwWindowShouldClose(MainWindow); }
-
-	void swapBuffers() { glfwSwapBuffers(MainWindow); }
+	void swapBuffers() { glfwSwapBuffers(mainWindow); }
 
 	~Window();
 
 private:
-	GLFWwindow* MainWindow;
+	GLFWwindow* mainWindow;
 
 	GLint width, height;
 	GLint bufferWidth, bufferHeight;
-	bool keys[1024]; //for getting input 1024 ascii den dolay� klavyedeki b�t�n sembolleri kapsas�n diye
+
+	bool keys[1024];
 
 	GLfloat lastX;
 	GLfloat lastY;
 	GLfloat xChange;
 	GLfloat yChange;
-	bool mouseFirstMove;
-	
+	bool mouseFirstMoved;
 
-	void CreateCallBacks();
-	static void HandleKeys(GLFWwindow * window, int key, int code, int action, int mode);
-	static void HandleMouse(GLFWwindow* window, double xPos, double yPos);
+	void createCallbacks();
+	static void handleKeys(GLFWwindow* window, int key, int code, int action, int mode);
+	static void handleMouse(GLFWwindow* window, double xPos, double yPos);
 };
-

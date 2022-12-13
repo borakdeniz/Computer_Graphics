@@ -1,8 +1,11 @@
 #pragma once
-#include <GL/glew.h>
+
+#include <GL\glew.h>
+
 #include <glm.hpp>
-#include <gtc/matrix_transform.hpp>
-#include <GLFW/include/GLFW/glfw3.h>
+#include <gtc\matrix_transform.hpp>
+
+#include <GLFW\glfw3.h>
 
 class Camera
 {
@@ -12,6 +15,8 @@ public:
 
 	void keyControl(bool* keys, GLfloat deltaTime);
 	void mouseControl(GLfloat xChange, GLfloat yChange);
+
+	glm::vec3 getCameraPosition();
 
 	glm::mat4 calculateViewMatrix();
 
