@@ -59,6 +59,10 @@ unsigned int pointLightCount = 0;
 GLfloat deltaTime = 0.0f;
 GLfloat lastTime = 0.0f;
 
+GLfloat SeaHawkAngle = 0.0f;
+GLfloat xwingAngle = 0.0f;
+
+
 float curAngle = 0.0f; //used for rotation
 
 // Vertex Shader code
@@ -182,15 +186,32 @@ void RenderScene()
     shinyMaterial.UseMaterial(uniformSpecularIntensity, uniformShininess);
     MeshList[2]->RenderMesh();
 
+
+    xwingAngle += 0.1f;
+    if (xwingAngle > 360.0f)
+    {
+        xwingAngle = 0.1f;
+    }
+
     model = glm::mat4(1.0f);
+    model = glm::rotate(model, -xwingAngle* toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
     model = glm::translate(model, glm::vec3(-7.0f, 0.0f, 10.0f));
+    model = glm::rotate(model, toRadians, glm::vec3(1.0f, 1.0f, 0.0f));
     model = glm::scale(model, glm::vec3(0.006f, 0.006f, 0.006f));
     glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
     shinyMaterial.UseMaterial(uniformSpecularIntensity, uniformShininess);
     xwing.RenderModel();
 
+
+    SeaHawkAngle -= 0.1f;
+    if (SeaHawkAngle > 360.0f)
+    {
+        SeaHawkAngle = 0.1f;
+    }
+
     model = glm::mat4(1.0f);
-    model = glm::translate(model, glm::vec3(-3.0f, 0.0f, 0.0f));
+    model = glm::rotate(model, -SeaHawkAngle * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+    model = glm::translate(model, glm::vec3(-8.0f, 0.0f, 0.0f));
     model = glm::rotate(model, toRadians, glm::vec3(1.0f, 1.0f, 0.0f));
     model = glm::scale(model, glm::vec3(0.03f, 0.03f, 0.03f));
     glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
@@ -216,7 +237,8 @@ void DirectionalShadowMapPass(DirectionalLight* light)
     glClear(GL_DEPTH_BUFFER_BIT);
 
     uniformModel = directionalShadowShader.GetModelLocation();
-    directionalShadowShader.SetDirectionalLightTransform(&light->CalculateLightTransform());
+    glm::mat4 lightTransform = light->CalculateLightTransform();            // Define light transform outside error solved
+    directionalShadowShader.SetDirectionalLightTransform(&lightTransform);  // Pass in
 
     RenderScene();
 
@@ -245,7 +267,9 @@ void RenderPass(glm::mat4 viewMatrix, glm::mat4 projectionMatrix)
 
     ShaderList[0].SetDirectionalLight(&mainLight);
     ShaderList[0].SetPointLights(pointLights, pointLightCount);
-    ShaderList[0].SetDirectionalLightTransform(&mainLight.CalculateLightTransform());
+   
+    glm::mat4 lightTransform = mainLight.CalculateLightTransform(); //error solved
+    ShaderList[0].SetDirectionalLightTransform(&lightTransform);
 
     mainLight.GetShadowMap()->Read(GL_TEXTURE1);
     ShaderList[0].SetTexture(0);
@@ -286,8 +310,9 @@ int main(void)
     Audi.LoadModel("Models/PG2.79.obj");
 
     mainLight = DirectionalLight(2048,2048,1.0f, 1.0f, 1.0f,
-                                 0.0f, 0.0f,
-                                 0.0f, 0.0f, -1.0f);
+                                 0.1f, 0.3f,
+                                 0.0f, -15.0f, -10.0f);
+   
     unsigned int pointLightCount = 0;
     pointLights[0] = PointLight(0.0f, 0.0f, 1.0f,
                                 0.0f, 1.0f,
@@ -318,7 +343,8 @@ int main(void)
         
         camera.keyControl(MainWindow.getsKeys(), deltaTime); // key control i�in window.cpp deki fonksiyonu �a��r�yoz
         camera.mouseControl(MainWindow.getXChange(), MainWindow.getYChange()); // mouse control i�in x ve y eksenindeki de�i�melere bakiyoruz
-
+        DirectionalShadowMapPass(&mainLight);
+        RenderPass(camera.calculateViewMatrix(), projection);
     
         glUseProgram(0);
 
