@@ -8,7 +8,7 @@
 #include <GL\glew.h>
 
 #include "CommonValues.h"
-
+#include <gtc\type_ptr.hpp>
 #include "DirectionalLight.h"
 #include "PointLight.h"
 
@@ -35,6 +35,9 @@ public:
 
 	void SetDirectionalLight(DirectionalLight* dLight);
 	void SetPointLights(PointLight* pLight, unsigned int lightCount);
+	void SetTexture(GLuint textureUnit);
+	void SetDirectionalShadowMap(GLuint textureUnit);
+	void SetDirectionalLightTransform(glm::mat4* ltransform);
 
 	void UseShader();
 	void ClearShader();
@@ -45,7 +48,7 @@ private:
 	int pointLightCount;
 
 	GLuint shaderID, uniformProjection, uniformModel, uniformView, uniformEyePosition,
-		uniformSpecularIntensity, uniformShininess;
+		uniformSpecularIntensity, uniformShininess, uniformDirectionalLightTransform, uniformDirectionalShadowMap, uniformTexture;
 
 	struct {
 		GLuint uniformColour;

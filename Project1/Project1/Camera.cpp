@@ -81,7 +81,7 @@ void Camera::update()
 
 	right = glm::normalize(glm::cross(front, worldUp));
 	up = glm::normalize(glm::cross(right, front));
-}
+}   
 
 
 Camera::~Camera()
