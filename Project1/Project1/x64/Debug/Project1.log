@@ -1,7 +1,7 @@
 ﻿  main.cpp
-C:\Users\Cengiz Han\Desktop\Project1\Project1\Project1\main.cpp(97,58): warning C4267: 'başlatılıyor': 'size_t' - 'unsigned int' dönüşümü; veri kaybı olabilir
-C:\Users\Cengiz Han\Desktop\Project1\Project1\Project1\main.cpp(336,21): warning C4244: 'başlatılıyor': 'double' - 'GLfloat' dönüşümü; veri kaybı olabilir
-glew32sd.lib(glew.obj) : warning LNK4099: PDB 'glew_static.pdb', 'glew32sd.lib(glew.obj)' ile veya 'C:\Users\Cengiz Han\Desktop\Project1\Project1\x64\Debug\glew_static.pdb' üzerinde bulunamadı; nesne, hata ayıklama bilgileri yokmuş gibi bağlanıyor
-  Project1.vcxproj -> C:\Users\Cengiz Han\Desktop\Project1\Project1\x64\Debug\Project1.exe
+C:\Users\eminb.AKDENIZ\Documents\GitHub\Computer_Graphics\Project1\Project1\main.cpp(103,58): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\eminb.AKDENIZ\Documents\GitHub\Computer_Graphics\Project1\Project1\main.cpp(399,21): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+glew32sd.lib(glew.obj) : warning LNK4099: PDB 'glew_static.pdb' was not found with 'glew32sd.lib(glew.obj)' or at 'C:\Users\eminb.AKDENIZ\Documents\GitHub\Computer_Graphics\Project1\x64\Debug\glew_static.pdb'; linking object as if no debug info
+  Project1.vcxproj -> C:\Users\eminb.AKDENIZ\Documents\GitHub\Computer_Graphics\Project1\x64\Debug\Project1.exe
   Copying native Assimp libraries...
-  C:\Users\Cengiz Han\Desktop\Project1\Project1\x64\Debug\Project1.deps.json
+  C:\Users\eminb.AKDENIZ\Documents\GitHub\Computer_Graphics\Project1\x64\Debug\Project1.deps.json
