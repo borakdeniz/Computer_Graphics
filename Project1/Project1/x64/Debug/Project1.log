@@ -1,7 +1,6 @@
 ﻿  main.cpp
-C:\Users\eminb.AKDENIZ\Documents\GitHub\Computer_Graphics\Project1\Project1\main.cpp(103,58): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\eminb.AKDENIZ\Documents\GitHub\Computer_Graphics\Project1\Project1\main.cpp(399,21): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
-glew32sd.lib(glew.obj) : warning LNK4099: PDB 'glew_static.pdb' was not found with 'glew32sd.lib(glew.obj)' or at 'C:\Users\eminb.AKDENIZ\Documents\GitHub\Computer_Graphics\Project1\x64\Debug\glew_static.pdb'; linking object as if no debug info
+C:\Users\eminb.AKDENIZ\Documents\GitHub\Computer_Graphics\Project1\Project1\main.cpp(107,58): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\eminb.AKDENIZ\Documents\GitHub\Computer_Graphics\Project1\Project1\main.cpp(414,21): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
   Project1.vcxproj -> C:\Users\eminb.AKDENIZ\Documents\GitHub\Computer_Graphics\Project1\x64\Debug\Project1.exe
   Copying native Assimp libraries...
   C:\Users\eminb.AKDENIZ\Documents\GitHub\Computer_Graphics\Project1\x64\Debug\Project1.deps.json
